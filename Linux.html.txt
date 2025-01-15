@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Interactive Linux Commands</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* Resetting margins and paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0f2862, #9e363a, #091f36, #4f5f76); /* Gradient background */
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #003366; /* Dark Blue */
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #00509e; /* Medium Blue */
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00; /* Yellow for hover effect */
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 40px;
+        }
+
+        section {
+            background-color: #f8f8f8; /* Light Gray for content background */
+            border-radius: 8px;
+            padding: 15px;  /* Reduced padding for smaller boxes */
+            margin-bottom: 15px; /* Reduced margin for closer boxes */
+            width: 80%; /* Adjust width to make it smaller */
+            max-width: 900px; /* Set max width for larger screens */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            margin-left: auto; /* Center alignment */
+            margin-right: auto; /* Center alignment */
+        }
+
+        section:hover {
+            transform: translateY(-10px);
+        }
+
+        section h2 {
+            color: #003366; /* Dark Blue for headings */
+            margin-bottom: 15px;
+            font-size: 1.8em; /* Reduced heading size */
+            text-transform: capitalize;
+            font-weight: 700;
+        }
+
+        section p {
+            font-size: 1em; /* Reduced paragraph size */
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        section pre {
+            background-color: #f1f1f1;
+            padding: 10px; /* Reduced padding */
+            font-family: 'Source Code Pro', monospace;
+            border-radius: 5px;
+            font-size: 1em; /* Reduced font size */
+            color: #333;
+            overflow-x: auto;
+        }
+
+        section img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        /* Responsive design for mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin-bottom: 15px;
+            }
+
+            section h2 {
+                font-size: 1.6em;
+            }
+
+            section p,
+            section pre {
+                font-size: 1em;
+            }
+
+            section {
+                width: 95%; /* Make it even smaller on mobile */
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #003366; /* Dark Blue */
+            color: white;
+            margin-top: 40px;
+            border-radius: 8px;
+            font-size: 1.1em;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Interactive Linux Commands Guide</h1>
+        <p>Learn and master essential Linux commands with interactive examples.</p>
+        <nav>
+            <ul>
+                <li><a href="#top">Top</a></li>
+                <li><a href="#kill">Kill</a></li>
+                <li><a href="#ifconfig">Ifconfig</a></li>
+                <li><a href="#ping">Ping</a></li>
+                <li><a href="#ssh">SSH</a></li>
+                <li><a href="#scp">SCP</a></li>
+                <li><a href="#curl">Curl</a></li>
+                <li><a href="#diff">Diff</a></li>
+                <li><a href="#head">Head</a></li>
+                <li><a href="#tail">Tail</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Top Command Section -->
+        <section id="top">
+            <h2>Top Command</h2>
+            <p>The <code>top</code> command is used to display the system's running processes in real-time. It shows CPU usage, memory usage, system uptime, and other information like processes and user activities.</p>
+            <h3>Usage:</h3>
+            <pre>top</pre>
+            <h3>Additional Example:</h3>
+            <pre>top -u <username></pre>
+            <p>Example output:</p>
+            <img src="top_screenshot.png" alt="Top Command Screenshot">
+        </section>
+
+        <!-- Kill Command Section -->
+        <section id="kill">
+            <h2>Kill Command</h2>
+            <p>The <code>kill</code> command sends a signal to a process, which is typically used to terminate a process. You can specify the process ID (PID) of the process you want to kill.</p>
+            <h3>Usage:</h3>
+            <pre>kill <pid></pre>
+            <h3>Force Kill Example:</h3>
+            <pre>kill -9 <pid>  <!-- Force kill signal --></pre>
+            <p>Example output:</p>
+            <img src="kill_screenshot.png" alt="Kill Command Screenshot">
+        </section>
+
+        <!-- Ifconfig Command Section -->
+        <section id="ifconfig">
+            <h2>Ifconfig Command</h2>
+            <p>The <code>ifconfig</code> command is used to display or configure network interface parameters, like IP addresses, network interfaces, and routing details. It's essential for troubleshooting network issues.</p>
+            <h3>Usage:</h3>
+            <pre>ifconfig</pre>
+            <h3>Additional Example:</h3>
+            <pre>ifconfig eth0</pre>
+            <p>Example output:</p>
+            <img src="ifconfig_screenshot.png" alt="Ifconfig Command Screenshot">
+        </section>
+
+        <!-- Ping Command Section -->
+        <section id="ping">
+            <h2>Ping Command</h2>
+            <p>The <code>ping</code> command is used to check the connectivity status between your computer and a target system (usually a network address or IP). It sends echo requests and measures the round-trip time.</p>
+            <h3>Usage:</h3>
+            <pre>ping <hostname or IP></pre>
+            <h3>Additional Example:</h3>
+            <pre>ping -c 5 <hostname></pre>
+            <p>Example output:</p>
+            <img src="ping_screenshot.png" alt="Ping Command Screenshot">
+        </section>
+
+        <!-- SSH Command Section -->
+        <section id="ssh">
+            <h2>SSH Command</h2>
+            <p>The <code>ssh</code> command is used to securely connect to remote machines over a network. It's commonly used for remote administration of servers and managing remote machines securely.</p>
+            <h3>Usage:</h3>
+            <pre>ssh <user>@<host></pre>
+            <h3>Additional Example:</h3>
+            <pre>ssh user@192.168.1.10</pre>
+            <p>Example output:</p>
+            <img src="ssh_screenshot.png" alt="SSH Command Screenshot">
+        </section>
+
+        <!-- SCP Command Section -->
+        <section id="scp">
+            <h2>SCP Command</h2>
+            <p>The <code>scp</code> command allows you to securely copy files between local and remote systems using SSH. It ensures encrypted file transfer over a network.</p>
+            <h3>Usage:</h3>
+            <pre>scp <source> <user>@<host>:<destination></pre>
+            <h3>Additional Example:</h3>
+            <pre>scp file.txt user@192.168.1.10:/remote/directory</pre>
+            <p>Example output:</p>
+            <img src="scp_screenshot.png" alt="SCP Command Screenshot">
+        </section>
+
+        <!-- Curl Command Section -->
+        <section id="curl">
+            <h2>Curl Command</h2>
+            <p>The <code>curl</code> command is used to transfer data from or to a server, supporting multiple protocols such as HTTP, FTP, and more. It's commonly used for API testing and web scraping.</p>
+            <h3>Usage:</h3>
+            <pre>curl <url></pre>
+            <h3>Additional Example:</h3>
+            <pre>curl -O http://example.com/file.txt</pre>
+            <p>Example output:</p>
+            <img src="curl_screenshot.png" alt="Curl Command Screenshot">
+        </section>
+
+        <!-- Diff Command Section -->
+        <section id="diff">
+            <h2>Diff Command</h2>
+            <p>The <code>diff</code> command compares two files line by line and shows the differences. It's very useful for programmers and system administrators to track changes between file versions.</p>
+            <h3>Usage:</h3>
+            <pre>diff <file1> <file2></pre>
+            <h3>Additional Example:</h3>
+            <pre>diff -u file1.txt file2.txt</pre>
+            <p>Example output:</p>
+            <img src="diff_screenshot.png" alt="Diff Command Screenshot">
+        </section>
+
+        <!-- Head Command Section -->
+        <section id="head">
+            <h2>Head Command</h2>
+            <p>The <code>head</code> command is used to display the first few lines of a file. It’s commonly used for inspecting the beginning of log files or text files.</p>
+            <h3>Usage:</h3>
+            <pre>head <file></pre>
+            <h3>Additional Example:</h3>
+            <pre>head -n 10 file.txt</pre>
+            <p>Example output:</p>
+            <img src="head_screenshot.png" alt="Head Command Screenshot">
+        </section>
+
+        <!-- Tail Command Section -->
+        <section id="tail">
+            <h2>Tail Command</h2>
+            <p>The <code>tail</code> command is used to display the last few lines of a file. It's particularly useful for viewing the most recent logs or outputs of running processes.</p>
+            <h3>Usage:</h3>
+            <pre>tail <file></pre>
+            <h3>Additional Example:</h3>
+            <pre>tail -n 10 file.txt</pre>
+            <p>Example output:</p>
+            <img src="tail_screenshot.png" alt="Tail Command Screenshot">
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Linux Commands Guide. All rights reserved. | Designed by Your Name</p>
+    </footer>
+
+</body>
+
+</html>
